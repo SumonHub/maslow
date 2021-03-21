@@ -85,7 +85,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                                 "Interior Design",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 30,
+                                    fontSize: 20,
                                     color: Color(0xff121212)),
                               ),
                               Text(
@@ -98,7 +98,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                           Text(
                             "University Of Toronto",
                             style: TextStyle(
-                                fontSize: 20, color: Color(0xff414141)),
+                                fontSize: 16, color: Color(0xff414141)),
                           ),
                           Row(
                             children: [
@@ -107,7 +107,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                                 child: Text(
                                   "4.5",
                                   style: TextStyle(
-                                      fontSize: 17,
+                                      fontSize: 14,
                                       color: Color(0xffff7c65),
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -120,7 +120,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                                 child: Text(
                                   "64 Hours",
                                   style: TextStyle(
-                                      fontSize: 17,
+                                      fontSize: 14,
                                       color: Color(0xffff7c65),
                                       fontWeight: FontWeight.w500),
                                 ),
@@ -242,7 +242,7 @@ class CustomTile extends StatelessWidget {
             title,
             style: TextStyle(
               fontWeight: FontWeight.w500,
-              fontSize: 21,
+              fontSize: 16,
               color: Color(0xff000000),
             ),
           ),
@@ -251,7 +251,7 @@ class CustomTile extends StatelessWidget {
             duration,
             style: TextStyle(
               fontWeight: FontWeight.w400,
-              fontSize: 18,
+              fontSize: 14,
               color: Color(0xff777777),
             ),
           ),
