@@ -42,18 +42,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     vertical: Constants.mainPadding),
                 height: 44,
                 width: 44,
-                child: FlatButton(
-                  padding: EdgeInsets.all(0),
+                decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.3),
-                  child: Icon(Icons.menu, color: Colors.white),
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(10.0),
-                  ),
-                  onPressed: () {
-                    debugPrint("Menu pressed");
-                  },
+                  borderRadius: BorderRadius.circular(15),
                 ),
-              ),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(15),
+                  onTap: () {},
+                  child: Icon(
+                    Icons.menu,
+                    size: 30,
+                  ),
+                ),
+              )
             ],
           ),
         ),
@@ -80,51 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.white),
                 ),
 
-                SizedBox(height: Constants.mainPadding),
-
-                // 2. Search Textfield
-                /*Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20.0),
-                    ),
-                  ),
-                  child: TextField(
-                    focusNode: myFocusNode,
-                    style: TextStyle(
-                      fontSize: 12.0,
-                      color: Constants.textDark,
-                    ),
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(20.0),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                        borderSide: BorderSide(color: Colors.white),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      hintText: "Search courses",
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          Icons.search,
-                          color: Constants.textDark,
-                        ),
-                        onPressed: () {
-                          debugPrint("Search pressed");
-                        },
-                      ),
-                      hintStyle: TextStyle(
-                        fontSize: 15.0,
-                      ),
-                    ),
-                    maxLines: 1,
-                    controller: _searchControl,
-                  ),
-                ),*/
-                SizedBox(height: Constants.mainPadding),
+                SizedBox(height: Constants.mainPadding * 2),
 
                 // 3. Start Learning Button Section
                 Stack(
@@ -153,35 +110,29 @@ class _HomeScreenState extends State<HomeScreen> {
                           // Categories Button
                           Container(
                             width: 150,
-                            child: FlatButton(
-                              padding: EdgeInsets.all(10.0),
-                              color: Constants.salmonMain,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Expanded(
-                                    child: Center(
-                                      child: Text(
-                                        "All Courses",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
+                            child: ElevatedButton.icon(
+                                onPressed: () {
+                                  // Navigate to Learning
+                                  debugPrint("Pressed here");
+                                  Navigator.pushNamed(
+                                      context, Routes.ROUTE_ALL_COURSE_PAGE);
+                                },
+                                label: Center(
+                                  child: Text(
+                                    "All Courses",
+                                    style: TextStyle(color: Colors.white),
                                   ),
-                                  Icon(Icons.arrow_forward,
-                                      color: Colors.white, size: 16),
-                                ],
-                              ),
-                              shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(13.0),
-                              ),
-                              onPressed: () {
-                                // Navigate to Learning
-                                debugPrint("Pressed here");
-                                Navigator.pushNamed(
-                                    context, Routes.ROUTE_ALL_COURSE_PAGE);
-                              },
-                            ),
-                          )
+                                ),
+                                icon: Icon(Icons.arrow_forward,
+                                    color: Colors.white, size: 16),
+                                style: ElevatedButton.styleFrom(
+                                  shape: new RoundedRectangleBorder(
+                                    borderRadius: new BorderRadius.all(
+                                        Radius.circular(13.0)),
+                                  ),
+                                  primary: Color(0xfff56c6b),
+                                )),
+                          ),
                         ],
                       ),
                     ),

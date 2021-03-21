@@ -35,21 +35,22 @@ class _AllCoursePageState extends State<AllCoursePage> {
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
+                height: 44,
+                width: 44,
                 margin: new EdgeInsets.symmetric(
                     horizontal: Constants.mainPadding,
                     vertical: Constants.mainPadding),
-                height: 44,
-                width: 44,
-                child: FlatButton(
-                  padding: EdgeInsets.all(0),
+                decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.3),
-                  child: Icon(Icons.keyboard_backspace, color: Colors.white),
-                  shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(15),
+                  onTap: () => Navigator.pop(context),
+                  child: Icon(
+                    Icons.keyboard_backspace,
+                    size: 30,
                   ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
                 ),
               ),
               Text(
@@ -97,7 +98,6 @@ class _AllCoursePageState extends State<AllCoursePage> {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       hintText: "Search courses",
-
                       suffixIcon: IconButton(
                         icon: Icon(
                           Icons.search,
@@ -107,10 +107,8 @@ class _AllCoursePageState extends State<AllCoursePage> {
                           debugPrint("Search pressed");
                         },
                       ),
-                      hintStyle: TextStyle(
-                        fontSize: 16.0,
-                        color: Constants.grey
-                      ),
+                      hintStyle:
+                          TextStyle(fontSize: 16.0, color: Constants.grey),
                     ),
                     maxLines: 1,
                     controller: _searchControl,
